@@ -1,0 +1,9 @@
+llama-cpp-python
+codecarbon
+rouge-score
+datasets
+tqdm
+transformers
+huggingface_hub
+sentencepiece
+protobuf

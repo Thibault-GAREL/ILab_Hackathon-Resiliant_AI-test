@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git/
+.gitignore
+.venv/
+venv/
+venv_test/
+.vscode/
+.idea/
+*.log
+results_*.json
+*.gguf
+hf_cache/
+.cache/
