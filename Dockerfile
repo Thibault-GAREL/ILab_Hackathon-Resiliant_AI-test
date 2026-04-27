@@ -1,8 +1,8 @@
 # ============================================================
 # Dockerfile — Gemma 4 inference + eval (llama-cpp + HF)
-# Base : PyTorch + CUDA 12.1 (compatible RunPod GPU)
+# Base : PyTorch + CUDA 12.1 runtime (compatible RunPod GPU)
 # ============================================================
-FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel
+FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-runtime
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
@@ -15,32 +15,24 @@ ENV HF_HOME=/cache/huggingface \
     HF_HUB_CACHE=/cache/huggingface/hub \
     CODECARBON_LOG_LEVEL=error
 
-# Outils systeme necessaires pour compiler llama-cpp-python avec CUDA
+# ca-certificates suffit : on n'a plus besoin de build-essential/cmake
+# car on installe le wheel CUDA pre-compile de llama-cpp-python
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        build-essential \
-        cmake \
-        git \
-        curl \
         ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Installer les deps Python (on copie requirements.txt d'abord pour profiter du cache Docker)
 COPY requirements.txt .
 
-# llama-cpp-python compile avec support CUDA (GGML_CUDA=on)
-ENV CMAKE_ARGS="-DGGML_CUDA=on" \
-    FORCE_CMAKE=1
-
+# Wheel CUDA 12.1 pre-compile -> pas de compilation, ~10 min et plusieurs Go gagnes
 RUN pip install --upgrade pip && \
+    pip install llama-cpp-python \
+        --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu121 && \
     pip install -r requirements.txt
 
-# Copier le code du projet
 COPY . .
 
-# Creer le dossier cache (volume a monter au runtime)
 RUN mkdir -p /cache/huggingface
 
-# Par defaut on lance le script d'eval — modifie selon besoin
 CMD ["python", "test_infer_gemma4.py"]

@@ -1,4 +1,5 @@
-llama-cpp-python
+# llama-cpp-python est installe separement dans le Dockerfile
+# avec le wheel CUDA pre-compile (--extra-index-url abetlen)
 codecarbon
 rouge-score
 datasets
