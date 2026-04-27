@@ -27,7 +27,7 @@ with torch.device("meta"):
 architecture_string = str(model)
 
 # On l'écrit dans un fichier texte
-with open("architecture_gemma4.txt", "w", encoding="utf-8") as f:
+with open("vizualisation_document/architecture_gemma4.txt", "w", encoding="utf-8") as f:
     f.write(architecture_string)
 
 print("L'architecture complète a été sauvegardée dans 'architecture_gemma4.txt'")
@@ -37,9 +37,9 @@ from torchinfo import summary
 
 model_stats = summary(model, verbose=0, depth=4)  # depth=4 pour voir les sous-couches
 
-with open("summary_gemma4.txt", "w", encoding="utf-8") as f:
+with open("vizualisation_document/summary_gemma4.txt", "w", encoding="utf-8") as f:
     f.write(str(model_stats))
 
 # On sauvegarde aussi l'architecture brute pour avoir le nom exact des variables
-with open("architecture_brute_gemma4.txt", "w", encoding="utf-8") as f:
+with open("vizualisation_document/architecture_brute_gemma4.txt", "w", encoding="utf-8") as f:
     f.write(str(model))
