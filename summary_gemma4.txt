@@ -1,0 +1,87 @@
+===============================================================================================
+Layer (type:depth-idx)                                                 Param #
+===============================================================================================
+Gemma4ForConditionalGeneration                                         --
+├─Gemma4Model: 1-1                                                     --
+│    └─Gemma4VisionModel: 2-1                                          --
+│    │    └─Gemma4VisionPatchEmbedder: 3-1                             15,728,640
+│    │    │    └─Linear: 4-1                                           589,824
+│    │    └─Gemma4VisionEncoder: 3-2                                   --
+│    │    │    └─Gemma4VisionRotaryEmbedding: 4-2                      --
+│    │    │    └─ModuleList: 4-3                                       151,046,144
+│    │    └─Gemma4VisionPooler: 3-3                                    --
+│    └─Gemma4TextModel: 2-2                                            --
+│    │    └─Gemma4TextScaledWordEmbedding: 3-4                         402,653,184
+│    │    └─ModuleList: 3-5                                            --
+│    │    │    └─Gemma4TextDecoderLayer: 4-4                           36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-5                           36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-6                           36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-7                           36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-8                           43,262,464
+│    │    │    └─Gemma4TextDecoderLayer: 4-9                           36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-10                          36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-11                          36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-12                          36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-13                          43,262,464
+│    │    │    └─Gemma4TextDecoderLayer: 4-14                          36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-15                          36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-16                          36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-17                          36,184,064
+│    │    │    └─Gemma4TextDecoderLayer: 4-18                          43,262,464
+│    │    │    └─Gemma4TextDecoderLayer: 4-19                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-20                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-21                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-22                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-23                          70,000,640
+│    │    │    └─Gemma4TextDecoderLayer: 4-24                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-25                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-26                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-27                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-28                          70,000,640
+│    │    │    └─Gemma4TextDecoderLayer: 4-29                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-30                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-31                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-32                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-33                          70,000,640
+│    │    │    └─Gemma4TextDecoderLayer: 4-34                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-35                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-36                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-37                          63,708,928
+│    │    │    └─Gemma4TextDecoderLayer: 4-38                          70,000,640
+│    │    └─Gemma4RMSNorm: 3-6                                         1,536
+│    │    └─Gemma4TextRotaryEmbedding: 3-7                             --
+│    │    └─Gemma4TextScaledWordEmbedding: 3-8                         2,348,810,240
+│    │    └─Linear: 3-9                                                13,762,560
+│    │    └─Gemma4RMSNorm: 3-10                                        256
+│    └─Gemma4AudioModel: 2-3                                           --
+│    │    └─Gemma4AudioSubSampleConvProjection: 3-11                   --
+│    │    │    └─Gemma4AudioSubSampleConvProjectionLayer: 4-39         1,280
+│    │    │    └─Gemma4AudioSubSampleConvProjectionLayer: 4-40         36,896
+│    │    │    └─Linear: 4-41                                          1,048,576
+│    │    └─Gemma4AudioRelPositionalEncoding: 3-12                     --
+│    │    └─ModuleList: 3-13                                           --
+│    │    │    └─Gemma4AudioLayer: 4-42                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-43                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-44                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-45                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-46                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-47                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-48                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-49                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-50                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-51                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-52                                25,180,288
+│    │    │    └─Gemma4AudioLayer: 4-53                                25,180,288
+│    │    └─Linear: 3-14                                               1,574,400
+│    └─Gemma4MultimodalEmbedder: 2-4                                   --
+│    │    └─Linear: 3-15                                               1,179,648
+│    │    └─Gemma4RMSNorm: 3-16                                        --
+│    └─Gemma4MultimodalEmbedder: 2-5                                   --
+│    │    └─Linear: 3-17                                               2,359,296
+│    │    └─Gemma4RMSNorm: 3-18                                        --
+├─Linear: 1-2                                                          402,653,184
+===============================================================================================
+Total params: 5,506,950,688
+Trainable params: 5,506,950,688
+Non-trainable params: 0
+===============================================================================================

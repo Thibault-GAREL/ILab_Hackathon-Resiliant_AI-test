@@ -4,6 +4,8 @@ Test de précision + énergie pour Gemma 4 E2B (GGUF)
 pip install llama-cpp-python codecarbon rouge-score datasets tqdm
 """
 
+# Emplacement : C:\Users\garel\.cache\huggingface\hub\models--unsloth--gemma-4-E2B-it-GGUF\snapshots\f064409f340b34190993560b2168133e5dbae558\gemma-4-E2B-it-Q4_K_M.gguf
+
 import json, time, argparse
 from pathlib import Path
 from tqdm import tqdm
