@@ -4,8 +4,6 @@ Test de précision + énergie pour Gemma 4 E2B (GGUF)
 pip install llama-cpp-python codecarbon rouge-score datasets tqdm
 """
 
-# Emplacement : C:\Users\garel\.cache\huggingface\hub\models--unsloth--gemma-4-E2B-it-GGUF\snapshots\f064409f340b34190993560b2168133e5dbae558\gemma-4-E2B-it-Q4_K_M.gguf
-
 import json, time, argparse
 from pathlib import Path
 from tqdm import tqdm
@@ -31,7 +29,7 @@ def load_gguf_model(gguf_path: str, n_gpu_layers: int = -1):
     return Llama(
         model_path=gguf_path,
         n_gpu_layers=n_gpu_layers,   # -1 = tout sur GPU, 0 = CPU only
-        n_ctx=2048,
+        n_ctx=8192,
         n_batch=512,
         verbose=False,
     )
@@ -50,6 +48,14 @@ def load_hf_model(model_id: str):
 
 def infer_gguf(model, prompt: str, max_tokens: int = 256) -> tuple[str, float]:
     """Retourne (texte_généré, latence_ms)"""
+    # Filet de sécurité : tronque le prompt si prompt + max_tokens dépasse n_ctx
+    n_ctx = model.n_ctx()
+    max_prompt_tokens = n_ctx - max_tokens - 16  # marge pour tokens spéciaux
+    tokens = model.tokenize(prompt.encode("utf-8"))
+    if len(tokens) > max_prompt_tokens:
+        tokens = tokens[:max_prompt_tokens]
+        prompt = model.detokenize(tokens).decode("utf-8", errors="ignore")
+
     t0 = time.perf_counter()
     out = model(
         prompt,
