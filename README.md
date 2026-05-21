@@ -8,13 +8,10 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
----
 
 <p align="center">
-  <img src="https://github.com/Thibault-GAREL/Thibault-GAREL/raw/main/Logo_Group_Projects/group_resilient_sq.png" alt="Resilient AI Challenge Logo" width="150">
+  <img src="https://github.com/Thibault-GAREL/Thibault-GAREL/raw/main/Logo_Group_Projects/group_resilient_sq.png" alt="Resilient AI Challenge Logo" width="250">
 </p>
-
----
 
 ## 📝 Project Description
 
