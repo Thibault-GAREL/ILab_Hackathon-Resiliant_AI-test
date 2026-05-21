@@ -10,7 +10,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/Thibault-GAREL/Thibault-GAREL/raw/main/Logo_Group_Projects/group_resilient_sq.png" alt="Resilient AI Challenge Logo" width="250">
+  <img src="https://github.com/Thibault-GAREL/Thibault-GAREL/raw/main/Logo_Group_Projects/group_resilient_sq.png" alt="Resilient AI Challenge Logo" width="200">
 </p>
 
 ## 📝 Project Description
