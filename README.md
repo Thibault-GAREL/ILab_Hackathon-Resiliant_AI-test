@@ -21,24 +21,6 @@ This work is conducted at **Intelligence Lab** (ECE Paris), where we combine res
 
 ---
 
-## ⚙️ Features
-
-  🎯 Target **Gemma 4 E4B** model compression for image-to-text tasks
-
-  📉 Implement quantization and pruning techniques to reduce model size
-
-  ⚡ Optimize inference latency on edge devices
-
-  📊 Track experiments with **MLflow** for reproducibility
-
-  🧪 Comprehensive validation metrics (BLEU, CIDEr, METEOR)
-
-  🔧 Modular architecture: easy to swap compression techniques
-
-  🌍 Collaborative framework supporting multi-region teams
-
----
-
 ## 📂 Repository structure
 
 ```bash
